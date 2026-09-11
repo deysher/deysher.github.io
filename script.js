@@ -27,6 +27,7 @@ const bootLines = [
 const bootEl = document.getElementById("boot");
 
 function typeBoot(lines, lineDelay = 420, charDelay = 14) {
+  if (!bootEl) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     bootEl.textContent = lines.join("\n");
     return;
@@ -58,6 +59,7 @@ const listEl = document.getElementById("projects-list");
 const statusEl = document.getElementById("projects-status");
 
 async function loadProjects() {
+  if (!listEl || !statusEl) return;
   try {
     const res = await fetch(
       `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=100`

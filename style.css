@@ -64,6 +64,12 @@ code {
 }
 .statusbar__sep { opacity: 0.4; }
 #clock { margin-left: auto; }
+.statusbar__item {
+  text-decoration: none;
+  color: var(--ink-soft);
+  transition: color 0.15s ease;
+}
+.statusbar__item:hover { color: var(--amber); }
 
 /* hero */
 .hero {
