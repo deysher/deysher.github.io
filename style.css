@@ -24,14 +24,13 @@ html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background-color: var(--paper);
-  background-image:
-    repeating-linear-gradient(0deg, var(--paper-line) 0px, var(--paper-line) 1px, transparent 1px, transparent 32px),
-    repeating-linear-gradient(90deg, var(--paper-line) 0px, var(--paper-line) 1px, transparent 1px, transparent 32px);
   color: var(--ink);
   font-family: var(--sans);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  background-color: var(--paper);
+  background-image: radial-gradient(circle at 50% 0%, rgba(221, 143, 43, 0.08), transparent 60%);
+  background-repeat: no-repeat;
 }
 
 a { color: var(--trace); }
@@ -47,7 +46,7 @@ code {
   font-size: 0.92em;
   background: rgba(18, 24, 26, 0.06);
   padding: 0.1em 0.4em;
-  border-radius: 3px;
+  border-radius: 4px;
 }
 
 /* status bar */
@@ -117,10 +116,12 @@ code {
   text-decoration: none;
   padding: 0.65rem 1.1rem;
   border: 1px solid var(--ink);
+  border-radius: 6px;
   color: var(--ink);
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  display: inline-block;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
 }
-.btn:hover { background: var(--ink); color: var(--paper); }
+.btn:hover { background: var(--ink); color: var(--paper); transform: translateY(-1px); }
 .btn--primary {
   background: var(--ink);
   color: var(--paper);
@@ -140,10 +141,7 @@ main {
 }
 
 .section {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 2rem;
-  padding: 3rem 0;
+  padding: 6rem 0;
   border-top: 1px solid var(--line);
 }
 
@@ -154,6 +152,7 @@ main {
   display: flex;
   gap: 0.5rem;
   align-items: baseline;
+  margin-bottom: 1.25rem;
 }
 .section__label .index {
   color: var(--amber);
@@ -225,6 +224,7 @@ main {
   font-size: 0.72rem;
   color: var(--trace);
   border-bottom: 1px solid var(--trace);
+  border-radius: 2px;
 }
 
 /* contact */
@@ -257,6 +257,5 @@ main {
 }
 
 @media (max-width: 620px) {
-  .section { grid-template-columns: 1fr; gap: 0.6rem; }
   .hero { padding-top: 3rem; }
 }
