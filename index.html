@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jacob — Software / Hardware / Coaching</title>
+<meta name="description" content="Portfolio of Jacob — software development, hardware projects, and personal training." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="statusbar">
+    <span class="statusbar__item">JACOB</span>
+    <span class="statusbar__sep">/</span>
+    <span class="statusbar__item">software · hardware · coaching</span>
+    <span class="statusbar__sep">/</span>
+    <span class="statusbar__item" id="clock"></span>
+  </div>
+
+  <header class="hero">
+    <pre class="boot" id="boot" aria-live="polite"></pre>
+    <h1 class="hero__title">Jacob<span class="hero__cursor">_</span></h1>
+    <p class="hero__tagline">I build software, tinker with hardware, and coach people through
+      their training — this page pulls its own project list from GitHub, so it stays
+      current without me touching it.</p>
+    <div class="hero__links">
+      <a href="#projects" class="btn btn--primary">View projects</a>
+      <a href="#contact" class="btn">Contact</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="section" id="about">
+      <div class="section__label">
+        <span class="index">01</span>
+        <span>About</span>
+      </div>
+      <div class="section__body">
+        <p>
+          I'm a developer working across the Node.js / Express / Prisma / PostgreSQL stack,
+          shipping projects through GitHub, Azure DevOps, and Railway. Outside of that I split
+          my time between electronics — breadboards, microcontrollers, small builds that talk
+          to real sensors — and personal training, where I'm working through an ACE CPT
+          certification.
+        </p>
+        <p>
+          This page is intentionally simple: static HTML, one stylesheet, one script, and a
+          GitHub Actions workflow that redeploys it automatically whenever I push. No CMS,
+          no build step to babysit.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section__label">
+        <span class="index">02</span>
+        <span>Projects</span>
+      </div>
+      <div class="section__body">
+        <p class="projects__note">Pulled live from
+          <code id="gh-user-label">github.com/yourusername</code> — nothing below is hand-typed.</p>
+        <ul class="projects__list" id="projects-list">
+          <li class="projects__status" id="projects-status">&gt; fetching repositories…</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section__label">
+        <span class="index">03</span>
+        <span>Contact</span>
+      </div>
+      <div class="section__body">
+        <ul class="linklist">
+          <li><a href="mailto:you@example.com">you@example.com</a><span class="linklist__meta">email</span></li>
+          <li><a href="https://github.com/yourusername" target="_blank" rel="noopener">github.com/yourusername</a><span class="linklist__meta">code</span></li>
+          <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">linkedin.com/in/yourusername</a><span class="linklist__meta">profile</span></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>Built and deployed by Jacob.</span>
+    <span id="build-stamp"></span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
